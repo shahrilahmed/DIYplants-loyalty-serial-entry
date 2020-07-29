@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./prox.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Loyalty Card Entries</title>
+</head>
+<body>
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Chattogram DIY Plants</h1>
+            <h3 style="color: #a1a1a1;">Loyalty Card Form</h3>
+        </div>
+    </header>
+    <div class="container">
+        
+        <form method="post" autocomplete="off" name="google-sheet"">
+            <div class="form-group row">
+                <label for="custname" class="col-md-2 col-form-label">Customer Name</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="custname" name="custname" placeholder="Customer Name" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="emailid" class="col-md-2 col-form-label">Email</label>
+                <div class="col-md-10">
+                    <input type="email" class="form-control" id="emailid" name="emailid" placeholder="example@mail.com">
+                </div>
+            </div>
+            <div class="form-group row">
+                    <label for="telnum" class="col-12 col-md-2 col-form-label">Mobile</label>
+                    <div class="col-md-5">
+                        <input type="tel" class="form-control" id="telnum" onkeypress="if(this.value.length == 11) return false;" name="telnum" placeholder="11 Digit Mobile Number" required>
+                    </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-2 offset-md-2">
+                    <p><strong>Loyalty Status</strong></p>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-control" name="loyalstatus" id="loyalstatus">
+                        <option value="Silver">Silver</option>
+                        <option value="Gold">Gold</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-md-2 col-md-10">
+                    <button type="submit" class="btn btn-primary">Generate</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <script src="./node_modules/luhn-generator/dist/luhn.min.js"></script> 
+    <script src="genalgo.js"></script>
+    
+</body>
+</html>
